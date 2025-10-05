@@ -26,6 +26,7 @@ namespace FMVC.Controllers
             List<Students> studentsList = new List<Students>()
             {
                 new Students(1,"مرتضی","چگنی",42),
+                new Students(1,"آرین","رحمانی شیواری اصل میاندوآبی",24),
                  new Students(2,"ابوالفضل","حاجی باقری",44),
                   new Students(3,"صادق","موحدی",46),
                    new Students(4,"سامیار","افشاریان",23),
@@ -46,6 +47,17 @@ namespace FMVC.Controllers
             };
 
             return View(studentsList);
+        }
+
+        public ActionResult UpdateStudent()
+        {
+            return View();
+        }
+
+
+        public ActionResult DeleteStudent()
+        {
+            return View();
         }
 
     }

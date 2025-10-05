@@ -150,6 +150,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\UserManage.cshtml" />
+    <Content Include="Views\Home\DeleteStudent.cshtml" />
+    <Content Include="Views\Home\UpdateStudent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
