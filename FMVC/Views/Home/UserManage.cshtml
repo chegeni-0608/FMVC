@@ -1,0 +1,31 @@
+﻿@model IEnumerable<FMVC.Models.Students>
+@{
+    ViewBag.Title = " مدیریت لیست پرسنل ";
+}
+
+<h2>  لیست پرسنل IT</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>آیدی</th>
+        <th>نام</th>
+        <th>نام خانوادگی</th>
+        <th>سن</th>
+        <th>عملیات</th>
+    </tr>
+    @foreach (var Students in Model)
+    {
+        <tr>
+            <td>@Students.StudentId</td>
+            <td>@Students.StudentName</td>
+            <td>@Students.StudentFamily</td>
+            <td>@Students.StudentAge</td>
+            <td>
+                <button class="btn btn-warning">ویرایش</button>
+                <button class="btn btn-danger">حذف</button>
+            </td>
+        </tr>
+    }
+
+</table>
+

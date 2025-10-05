@@ -1,0 +1,27 @@
+﻿@model FMVC.Models.Students
+@{
+    ViewBag.Title = "صفحه خانه سید";
+}
+
+<div class="jumbotron text-center">@Model.StudentName @Model.StudentFamily عزیز به آکادمی سید خوش آمدید</div>
+
+<table class="table table-bordered">
+    <tr>
+        <th>آیدی</th>
+        <th>نام</th>
+        <th>نام خانوادگی</th>
+        <th>سن</th>
+        <th>عملیات</th>
+    </tr>
+    <tr>
+        <td>@Model.StudentId</td>
+        <td>@Model.StudentName</td>
+        <td>@Model.StudentFamily</td>
+        <td>@Model.StudentAge</td>
+        <td>
+            <button class="btn btn-warning">ویرایش</button>
+            <button class="btn btn-danger">حذف</button>
+        </td>
+    </tr>
+
+</table>
