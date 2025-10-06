@@ -1,31 +1,55 @@
 ﻿@model IEnumerable<FMVC.Models.Students>
+
 @{
-    ViewBag.Title = " مدیریت لیست پرسنل ";
+    ViewBag.Title = "مدیریت پرسنل";
 }
 
-<h2>  لیست پرسنل IT</h2>
+<h2>اسامی پرسنل </h2>
 
-<table class="table table-bordered">
+<p>
+    @Html.ActionLink("ثبت پرسنل جدید", "Create")
+</p>
+<table class="table">
     <tr>
-        <th>آیدی</th>
-        <th>نام</th>
-        <th>نام خانوادگی</th>
-        <th>سن</th>
-        <th>عملیات</th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.StudentId)*@
+            آیدی
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.StudentName)*@
+            نام
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.StudentFamily)*@
+            نام خانوادگی
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.StudentAge)*@
+            سن
+        </th>
+        <th></th>
     </tr>
-    @foreach (var Students in Model)
-    {
-        <tr>
-            <td>@Students.StudentId</td>
-            <td>@Students.StudentName</td>
-            <td>@Students.StudentFamily</td>
-            <td>@Students.StudentAge</td>
-            <td>
-                <a href="/Home/UpdateStudent/?/StudentId=@Students.StudentId" class="btn btn-warning">ویرایش</a>
-                <a href="/Home/DeleteStudent" class="btn btn-danger">حذف</a>
-            </td>
-        </tr>
-    }
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentFamily)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentAge)
+        </td>
+        <td>
+            @Html.ActionLink("ویرایش", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("جزئیات", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("حذف", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
 
 </table>
-
